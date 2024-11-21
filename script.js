@@ -94,6 +94,92 @@ const tests = [
   // Muat tes pertama
   loadTest(currentTest);
 
+
+  //trakking
+  let watchID = null;
+    let totalDistance = 0;
+    let lastPosition = null;
+
+    const distanceElement = document.getElementById('distance');
+    const resultElement = document.getElementById('resultt');
+    const resultText = document.getElementById('resultText');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+
+    // Fungsi untuk menghitung jarak antara dua koordinat (dalam meter)
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371e3; // Radius bumi dalam meter
+      const rad = (deg) => (deg * Math.PI) / 180;
+      const φ1 = rad(lat1);
+      const φ2 = rad(lat2);
+      const Δφ = rad(lat2 - lat1);
+      const Δλ = rad(lon2 - lon1);
+
+      const a = Math.sin(Δφ / 2) ** 2 +
+                Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+      return R * c; // Jarak dalam meter
+    }
+
+    // Fungsi untuk memulai pelacakan
+    function startTracking() {
+      if (navigator.geolocation) {
+        totalDistance = 0;
+        lastPosition = null;
+
+        watchID = navigator.geolocation.watchPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+
+            if (lastPosition) {
+              const { lat: lastLat, lon: lastLon } = lastPosition;
+              const distance = calculateDistance(lastLat, lastLon, latitude, longitude);
+              totalDistance += distance;
+              distanceElement.textContent = `Jarak Tempuh: ${totalDistance.toFixed(2)} meter`;
+            }
+
+            lastPosition = { lat: latitude, lon: longitude };
+          },
+          (error) => {
+            alert('Tidak dapat mengakses lokasi. Pastikan GPS diaktifkan.');
+          },
+          { enableHighAccuracy: true }
+        );
+
+        startButton.disabled = true;
+        stopButton.disabled = false;
+        resultElement.classList.add('hidden');
+      } else {
+        alert('Perangkat Anda tidak mendukung Geolocation.');
+      }
+    }
+
+    // Fungsi untuk menghentikan pelacakan
+    function stopTracking() {
+      if (watchID !== null) {
+        navigator.geolocation.clearWatch(watchID);
+        watchID = null;
+
+        startButton.disabled = false;
+        stopButton.disabled = true;
+
+        // Tampilkan hasil
+        resultElement.classList.remove('hidden');
+        if (totalDistance >= 1000) {
+          resultText.textContent = `Luar biasa! Anda berjalan sejauh ${totalDistance.toFixed(2)} meter. Kondisi jantung Anda kemungkinan sangat baik.`;
+        } else if (totalDistance >= 500) {
+          resultText.textContent = `Bagus! Anda berjalan sejauh ${totalDistance.toFixed(2)} meter. Tetap jaga kebugaran Anda.`;
+        } else {
+          resultText.textContent = `Anda berjalan sejauh ${totalDistance.toFixed(2)} meter. Cobalah untuk lebih aktif untuk kesehatan jantung yang lebih baik.`;
+        }
+      }
+    }
+
+    // Tambahkan event listener
+    startButton.addEventListener('click', startTracking);
+    stopButton.addEventListener('click', stopTracking);
+
   //pendaftaran
   const navigateButton = document.getElementById('navigateButton');
 
