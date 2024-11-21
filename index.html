@@ -1,11 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+    <style>
+        html {
+        scroll-behavior: smooth;
+    }
+    </style>
 <body>
-    <h1>hello</h1>
+
+
+  <!-- navbar -->
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://cdn-icons-png.flaticon.com/128/4003/4003791.png" class="h-8" alt="kesehatan Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kesehatan</span>
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button id="navigateButton" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Formulir Pendaftar</button>
+        <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="#home" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#tentang" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tentang</a>
+        </li>
+        <li>
+          <a href="#fitur" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Fitur</a>
+        </li>
+        <li>
+          <a href="#kontak" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Kontak</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  
+  <!-- home -->
+  <section id="home">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+        <div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
+          <img
+            alt=""
+            src="https://cdn-assetd.kompas.id/LxwFK0LTGdSQdP6w9diq5yBk-TE=/1024x576/https%3A%2F%2Fkompas.id%2Fwp-content%2Fuploads%2F2021%2F08%2F8f59ebe4-3039-45a6-a84e-19cd273dd0bb_jpg.jpg"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+  
+        <div class="lg:py-24">
+          <h2 class="text-3xl font-bold sm:text-4xl">Layanan Kesehatan</h2>
+  
+          <p class="mt-4 text-gray-600">
+            Website layanan kesehatan yang akan mengecheck kondisi kesehatan anda secara online, dan juga memantau kesehatan lainnya.
+          </p>
+  
+          <a
+            href="#fitur"
+            class="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+          >
+            Periksa Kesehatan
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- tentang -->
+
+  <section id="tentang">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold sm:text-4xl">
+          Kami Melayani Pasien Secara Online Melalui Website Ini
+        </h2>
+      </div>
+  
+      <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+        <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
+          <img
+            alt=""
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaSqdeKc-BMgiMwbiOt0pW7EO4S3mifWL-Zw&s"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+  
+        <div class="lg:py-16">
+          <article class="space-y-4 text-gray-600">
+            <p>
+                Visi Kementerian Kesehatan
+                Visi dan Misi Kementerian Kesehatan tahun 2020-2024 menjabarkan visi misi Presiden tahun 2020-2024 di bidang kesehatan, yaitu:
+                "Menciptakan manusia yang sehat, produktif, mandiri dan berkeadilan"
+            </p>
+  
+            <p>
+                langkah terobosan untuk meningkatkan kualitas pelayanan kesehatan kepada masyarakat. Inovasi dalam pelayanan kesehatan dapat berupa ide, produk, layanan, atau jalur perawatan baru yang memiliki manfaat yang jelas. 
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- fitur -->
+  <div id="fitur" class="max-w-2xl mx-auto mt-10 mb-5 bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">Form Check-Up Kesehatan</h1>
+
+    <!-- Formulir -->
+    <form id="healthForm" class="space-y-4">
+      <!-- Nama -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Nama:</label>
+        <input
+          type="text"
+          id="name"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Masukkan nama Anda"
+          required
+        />
+      </div>
+
+      <!-- Umur -->
+      <div>
+        <label for="age" class="block text-sm font-medium text-gray-700">Umur:</label>
+        <input
+          type="number"
+          id="age"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Masukkan umur Anda"
+          required
+        />
+      </div>
+
+      <!-- Tinggi -->
+      <div>
+        <label for="height" class="block text-sm font-medium text-gray-700">Tinggi Badan (cm):</label>
+        <input
+          type="number"
+          id="height"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Masukkan tinggi badan Anda"
+          required
+        />
+      </div>
+
+      <!-- Berat -->
+      <div>
+        <label for="weight" class="block text-sm font-medium text-gray-700">Berat Badan (kg):</label>
+        <input
+          type="number"
+          id="weight"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Masukkan berat badan Anda"
+          required
+        />
+      </div>
+
+      <!-- Gejala -->
+      <div>
+        <label for="symptoms" class="block text-sm font-medium text-gray-700">Gejala yang Dirasakan:</label>
+        <textarea
+          id="symptoms"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Deskripsikan gejala Anda"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <!-- Tombol -->
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+      >
+        Periksa Kesehatan
+      </button>
+    </form>
+
+    <!-- Hasil -->
+    <div id="resultc" class="mt-6 hidden p-4 bg-gray-50 rounded-lg border border-gray-200"></div>
+  </div>
+
+  <!-- butawarna -->
+  <div class="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">Tes Buta Warna</h1>
+    
+    <div id="testContainer" class="space-y-6">
+      <!-- Tes Gambar -->
+      <div class="text-center">
+        <img
+          id="testImage"
+          src="https://via.placeholder.com/300/cccccc/000000?text=Tes+1"
+          alt="Tes Ishihara"
+          class="mx-auto w-64 h-64 rounded-md shadow-md"
+        />
+        <p class="mt-2 text-gray-600">Apa angka yang terlihat di dalam gambar?</p>
+      </div>
+      
+      <!-- Input Jawaban -->
+      <div>
+        <input
+          type="number"
+          id="userAnswer"
+          placeholder="Masukkan angka"
+          class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      
+      <!-- Tombol -->
+      <button
+        id="submitButton"
+        class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+      >
+        Kirim Jawaban
+      </button>
+      
+      <!-- Hasil -->
+      <div id="result" class="hidden p-4 bg-gray-50 rounded-lg border border-gray-200 text-center"></div>
+    </div>
+  </div>
+
+
+  <!-- testjantung -->
+  <div class="max-w-2xl mx-auto mt-10 mb-5 bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-blue-600 text-center mb-4">Tes Kesehatan Jantung</h1>
+    <p class="text-gray-700 text-center mb-6">Lacak jarak tempuh Anda untuk memeriksa kebugaran jantung.</p>
+    
+    <!-- Informasi Jarak -->
+    <div id="distance" class="text-center text-lg font-semibold text-gray-800 mb-6">
+      Jarak Tempuh: 0 meter
+    </div>
+
+    <!-- Tombol -->
+    <div class="flex space-x-4">
+      <button
+        id="startButton"
+        class="w-full bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition"
+      >
+        Mulai Tes
+      </button>
+      <button
+        id="stopButton"
+        class="w-full bg-red-500 text-white p-3 rounded-lg hover:bg-red-600 transition"
+        disabled
+      >
+        Selesai
+      </button>
+    </div>
+    
+    <!-- Hasil -->
+    <div id="result" class="hidden mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+      <h2 class="text-lg font-bold text-blue-600 mb-4">Hasil Tes</h2>
+      <p id="resultText" class="text-gray-700"></p>
+    </div>
+  </div>
+
+
+  
+<!-- kontak -->
+<div id="kontak" class="max-w-2xl mx-auto mt-20 mb-5 bg-white p-8 rounded-lg shadow-lg text-center">
+    <h1 class="text-3xl font-bold text-blue-600 mb-6">Kontak Saya</h1>
+    
+    <!-- Email -->
+    <div class="mb-6">
+      <p class="text-lg font-semibold text-gray-700">Email</p>
+      <a 
+        href="mailto:example@email.com" 
+        class="text-blue-500 underline hover:text-blue-700"
+      >
+        kesehatan.indo@email.com
+      </a>
+    </div>
+    
+    <!-- Sosial Media -->
+    <div>
+      <p class="text-lg font-semibold text-gray-700 mb-4">Sosial Media</p>
+      <div class="flex justify-center space-x-6">
+        <!-- Facebook -->
+        <a 
+          href="https://facebook.com/yourprofile" 
+          target="_blank" 
+          class="text-blue-600 hover:text-blue-800"
+          title="Facebook"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.408C14 5.876 14.156 5 15.632 5H18V0h-4.2C9.72 0 9 2.269 9 5.215V8z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a 
+          href="https://instagram.com/yourprofile" 
+          target="_blank" 
+          class="text-pink-500 hover:text-pink-700"
+          title="Instagram"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.358 3.608 1.332.975.975 1.27 2.243 1.332 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.358 2.633-1.332 3.608-.975.975-2.243 1.27-3.608 1.332-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.358-3.608-1.332-.975-.975-1.27-2.243-1.332-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.358-2.633 1.332-3.608.975-.975 2.243-1.27 3.608-1.332C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.736 0 8.332.013 7.053.072 5.75.131 4.513.455 3.424 1.544 2.335 2.632 2.011 3.87 1.952 5.172.893 5.45 0 8.343 0 12c0 3.657.013 3.668.072 4.948.059 1.302.383 2.54 1.472 3.629 1.09 1.09 2.328 1.413 3.63 1.472C8.332 23.987 8.343 24 12 24c3.657 0 3.668-.013 4.948-.072 1.302-.059 2.54-.383 3.629-1.472 1.09-1.09 1.413-2.328 1.472-3.63C23.987 15.668 24 15.657 24 12c0-3.657-.013-3.668-.072-4.948-.059-1.302-.383-2.54-1.472-3.629C20.516.455 19.278.131 17.977.072 16.668.013 16.343 0 12 0zm0 5.838c-3.404 0-6.162 2.758-6.162 6.162s2.758 6.162 6.162 6.162 6.162-2.758 6.162-6.162S15.404 5.838 12 5.838zm0 10.162c-2.205 0-4-1.795-4-4s1.795-4 4-4 4 1.795 4 4-1.795 4-4 4zm6.406-11.845c-.796 0-1.443.647-1.443 1.443s.647 1.443 1.443 1.443 1.443-.647 1.443-1.443-.647-1.443-1.443-1.443z"/>
+          </svg>
+        </a>
+        <!-- Twitter -->
+        <a 
+          href="https://twitter.com/yourprofile" 
+          target="_blank" 
+          class="text-blue-400 hover:text-blue-600"
+          title="Twitter"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 4.557a9.965 9.965 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.184 4.917 4.917 0 0 0-8.384 4.482C7.688 8.087 4.064 6.128 1.64 3.161a4.905 4.905 0 0 0-.666 2.475 4.918 4.918 0 0 0 2.188 4.093 4.903 4.903 0 0 1-2.228-.616v.06a4.918 4.918 0 0 0 3.946 4.827 4.92 4.92 0 0 1-2.212.084 4.93 4.93 0 0 0 4.604 3.417 9.86 9.86 0 0 1-6.1 2.102c-.396 0-.788-.023-1.176-.068a13.934 13.934 0 0 0 7.557 2.212c9.054 0 14.004-7.496 14.004-13.986 0-.214-.005-.426-.014-.637A10.014 10.014 0 0 0 24 4.557z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- footer -->
+  <footer class="dark:bg-gray-900">
+    <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+      <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+        <a
+          class="inline-block rounded-full bg-indigo-600 p-2 text-white shadow transition hover:bg-indigo-700 sm:p-3 lg:p-4"
+          href="#home"
+        >
+          <span class="sr-only">Back to top</span>
+  
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+  
+      <div class="lg:flex lg:items-end lg:justify-between">
+        <div>
+          <div class="flex justify-center text-blue-600 lg:justify-start">
+            <img src="https://cdn-icons-png.flaticon.com/128/4003/4003791.png" class="h-14" alt="kesehatan Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kesehatan</span>
+            
+          </div>
+  
+          <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
+            Website layanan kesehatan yang akan mengecheck kondisi kesehatan anda secara online
+          </p>
+        </div>
+  
+        <ul
+          class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12"
+        >
+          <li>
+            <a class="text-gray-700 transition hover:text-gray-700/75" href="#home"> Home </a>
+          </li>
+  
+          <li>
+            <a class="text-gray-700 transition hover:text-gray-700/75" href="#tentang"> Tentang </a>
+          </li>
+  
+          <li>
+            <a class="text-gray-700 transition hover:text-gray-700/75" href="#fitur"> Fitur </a>
+          </li>
+  
+          <li>
+            <a class="text-gray-700 transition hover:text-gray-700/75" href="#kontak"> Kontak </a>
+          </li>
+        </ul>
+      </div>
+  
+      <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+        Copyright &copy; 2024. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
