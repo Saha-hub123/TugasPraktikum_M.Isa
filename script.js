@@ -1,3 +1,19 @@
+//navbar
+const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+        const navbarMenu = document.getElementById('navbar-sticky');
+    
+        // Add event listener to toggle button
+        toggleButton.addEventListener('click', () => {
+            const expanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
+            
+            // Toggle the expanded attribute
+            toggleButton.setAttribute('aria-expanded', !expanded);
+            
+            // Toggle the navbar visibility by changing the 'hidden' class
+            navbarMenu.classList.toggle('hidden');
+        });
+
+        
 //checkup
 // Tangkap elemen
 const form = document.getElementById('healthForm');
