@@ -30,6 +30,8 @@
           <div class="relative">
             <input
               type="email"
+              id="email"
+              name="email"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
               placeholder="Enter email"
             />
@@ -177,6 +179,7 @@
       const formData = new FormData(patientForm);
       const data = {
         name: formData.get('name'),
+        email: formData.get('email'),
         age: formData.get('age'),
         gender: formData.get('gender'),
         address: formData.get('address'),
@@ -188,6 +191,7 @@
       resultDiv.innerHTML = `
         <h2 class="text-lg font-bold text-blue-600 mb-4">Data Pendaftaran</h2>
         <p><strong>Nama:</strong> ${data.name}</p>
+        <p><strong>Nama:</strong> ${data.email}</p>
         <p><strong>Usia:</strong> ${data.age}</p>
         <p><strong>Jenis Kelamin:</strong> ${data.gender}</p>
         <p><strong>Alamat:</strong> ${data.address}</p>
